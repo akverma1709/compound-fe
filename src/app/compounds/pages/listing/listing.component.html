@@ -1,0 +1,32 @@
+<div class="page">
+  <ng-container *ngIf="compoundList.length">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 mt-20" *ngFor="let item of compoundList; let i=index">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title>{{item?.CompoundName}}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image [src]="item?.strImageSource || 'assets/images.png'" alt="Not Found" onerror="this.src='assets/images/images.png';">
+          <mat-card-content>
+            <p>{{item?.description}}<span *ngIf="item?.CompounrDescription.length > 100">...</span></p>
+            <a ></a>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-stroked-button [routerLink]="['',item?.id]">View</button>
+            <button mat-stroked-button class="ml-15" (click)="openDialog(item, i)">Edit</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <mat-paginator [length]="paginationData?.total" [pageSize]="paginationData?.limit" [pageSizeOptions]="pageSizeOptions"
+          (page)="changePage($event)" aria-label="Select page">
+        </mat-paginator>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="!compoundList.length">
+    <app-page-not-found></app-page-not-found>
+  </ng-container>
+</div>

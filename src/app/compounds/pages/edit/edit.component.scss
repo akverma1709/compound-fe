@@ -1,0 +1,71 @@
+@import "../../../../assets/style/popup-ui";
+
+:host ::ng-deep {
+  .popup-ui {
+    .flex_form_row {
+      padding: 0px 25px;
+    }
+    .mat-form-field {
+      width: 100%;
+    }
+
+    &.confirmation-modal {
+      .popup-body {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+
+        .form_field {
+          text-align: left;
+
+          .required {
+            &::after {
+              content: "*";
+              margin-left: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .mat-form-field-subscript-wrapper {
+    font-size: 14px;
+    margin-top: 12px;
+    padding-left: 0;
+  }
+  mat-form-field {
+    &.mat-focused {
+      .mat-form-field-flex {
+        .mat-form-field-outline-thick {
+          div {
+            border-color: $primary;
+          }
+        }
+      }
+
+      .mat-form-field-infix {
+        .mat-form-field-label-wrapper {
+          mat-label {
+            color: $primary;
+          }
+
+          label {
+            span {
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      .mat-form-field-ripple {
+        background-color: $primary !important;
+      }
+    }
+  }
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+.mt-10 {
+  margin-top: 10px;
+}

@@ -1,0 +1,70 @@
+@import "./mix";
+@import "./var";
+
+.popup-ui {
+	.popup-header {
+		padding: 20px 10px;
+		background-color: $primary;
+		border-radius: 3px 3px 0px 0px;
+		color: $white;
+		position: relative;
+		@include fpos(center, flex-start);
+
+		.close-icon {
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 9;
+			cursor: pointer;
+			color: $white;
+      font-size: 20px;
+		}
+
+		.close-left {
+			margin-right: 10px;
+		}
+
+		h4 {
+			color: $white;
+			text-transform: capitalize;
+			font-size: 20px;
+      margin-bottom: 0;
+		}
+	}
+
+	.popup-body {
+		text-align: center;
+		padding: 30px 20px;
+		max-height: calc(100vh - 160px);
+		@include scroller;
+		background-color: $white;
+
+		p {
+			margin: 0px;
+		}
+	}
+
+	.popup-footer {
+		background-color: $white;
+		padding-bottom: 20px;
+
+		.btn-cover {
+			@include fpos(center, center);
+			margin: 0px -10px;
+
+			.btn {
+				margin: 10px;
+				min-width: 120px;
+				border-radius: 15px;
+				height: 48px;
+			}
+		}
+	}
+
+	&.confirmation-modal{
+		.popup-body{
+			padding: 70px 20px 40px;
+		}
+	}
+}

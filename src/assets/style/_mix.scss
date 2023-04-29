@@ -1,0 +1,50 @@
+@import './var';
+
+//   Two-Axis Scroller
+@mixin scroller($brodness: 8px, $bgcolor: $primary) {
+    overflow-y: auto;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        width: $brodness;
+        height: $brodness;
+    }
+
+    &::-webkit-scrollbar-track {
+        width: $brodness;
+        height: $brodness;
+        border-radius: 20px 20px;
+        background: $white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 20px 20px;
+        background-color: $primary;
+        opacity: 0.5;
+        width: $brodness;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin fpos($a-item, $j-align) {
+    @include flexbox;
+    align-items: $a-item;
+    justify-content: $j-align;
+}
+
+@mixin flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin fpos($a-item, $j-align) {
+    @include flexbox;
+    align-items: $a-item;
+    justify-content: $j-align;
+}

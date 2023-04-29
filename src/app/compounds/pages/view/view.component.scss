@@ -1,0 +1,23 @@
+.page {
+  padding: 20px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.ml-15 {
+  margin-left: 15px;
+}
+:host ::ng-deep {
+  .mat-card-image {
+    width: unset!important;
+    height: unset!important;
+    max-height: 350px!important;
+  }
+  .mat-card-header {
+    margin-top: 4px;
+    margin-left: 10px;
+  }
+  .material-icons {
+    font-size: 28px;
+  }
+}

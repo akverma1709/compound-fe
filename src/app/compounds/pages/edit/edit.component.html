@@ -1,0 +1,53 @@
+<div class="confirmation-modal popup-ui">
+  <div class="popup-header">
+    <h4>Edit Compound</h4>
+    <span class="material-icons close-icon" (click)="closeDialog(null)">close</span>
+  </div>
+  <form [formGroup]="compoundForm" (ngSubmit)="compoundHandler()">
+    <div class="popup-body">
+      <div class="row flex_form_row">
+        <div class="col-12" style="padding: 0;">
+          <div class="form_field">
+            <mat-label class="required">Compound Name</mat-label>
+            <mat-form-field appearance="outline">
+              <input matInput autocomplete="off" placeholder="Enter Compound Name" formControlName="CompoundName"
+                [errorStateMatcher]="matcher" [maxlength]="100">
+              <mat-error *ngIf="frmCtrl.CompoundName.hasError('required')">
+                Please enter compound name.
+              </mat-error>
+              <mat-error *ngIf="frmCtrl.CompoundName.hasError('pattern')">
+                Compound name accepts only alphabets.
+              </mat-error>
+              <mat-error *ngIf="frmCtrl.CompoundName.hasError('maxlength') && !frmCtrl.CompoundName.hasError('pattern')">
+                Compound name accepts maximum 100 alphabets.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-12 mt-10" style="padding: 0;">
+          <div class="form_field">
+            <mat-label class="required">Compound Description</mat-label>
+            <mat-form-field appearance="outline">
+              <textarea matInput autocomplete="off" placeholder="Enter Compound Description"
+                formControlName="CompounrDescription" [errorStateMatcher]="matcher"
+                [maxlength]="5000">
+              </textarea>
+              <mat-error *ngIf="frmCtrl.CompounrDescription.hasError('required')">
+                Please enter compound description.
+              </mat-error>
+              <mat-error *ngIf="frmCtrl.CompounrDescription.hasError('maxlength')">
+                Compound description accepts maximum 5000 characters.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <div class="btn-cover">
+        <button type="button" mat-stroked-button (click)="closeDialog(null)">Cancel</button>
+        <button type="submit" mat-stroked-button class="ml-15">Update</button>
+      </div>
+    </div>
+  </form>
+</div>

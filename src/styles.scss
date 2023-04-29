@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/style/var";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-card {
+  box-shadow: none!important;
+  border: 1px solid #C49A77;
+}
+
+.mat-card-header {
+  justify-content: space-between;
+}
+
+.mat-card-header-text {
+  margin: 0!important;
+  width: 100%;
+}
+
+.material-icons {
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.mat-card-image {
+  height: 300px;
+  width: 100%!important;
+  margin: auto!important;
+}
+
+.mat-card-content {
+  margin-top: 15px;
+  min-height: 60px;
+}
+
+.mat-card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mat-dialog-container {
+  padding: 0!important;
+  overflow: unset!important;
+}
+.mat-card-actions .mat-stroked-button {
+  border: 1px solid #C49A77;
+}
+.btn-cover .mat-stroked-button {
+  border: 1px solid #C49A77;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $primary-light;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $primary;
+}
